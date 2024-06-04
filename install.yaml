@@ -1,0 +1,21 @@
+
+-   name: Install Nginx и PHP
+    hosts: all
+    tasks:
+      - name: Install Nginx
+        yum:
+            name: nginx
+            state: latest
+
+      - name: Установка PHP
+        yum:
+            name: php-cli
+            state: latest
+
+      - name: Start NGINX
+        service:
+            name: nginx
+            enabled: yes
+            state: started
+
+
